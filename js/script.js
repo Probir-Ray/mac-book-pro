@@ -9,11 +9,11 @@ function getCost(item, price) {
     totalPriceCalc();
 }
 
-// Total Price Calculation
+// Total Price Calculation function
 function totalPriceCalc() {
     const bestPrice = parseInt(document.getElementById('best-price').innerText);
     const totalPriceText = document.getElementById('total-price');
-    let totalPrice = totalPriceText.innerText;
+    const totalAmount = document.getElementById('total');
 
     // Get Element value.
     const memoryCostText = document.getElementById('memory-price');
@@ -21,12 +21,26 @@ function totalPriceCalc() {
     const deliveryPriceText = document.getElementById('delivery-price');
 
     // Sum of all cost
-    totalPrice = parseFloat(memoryCostText.innerText) + parseFloat(storageCostText.innerText) +
-    parseFloat(deliveryPriceText.innerText) + bestPrice;
+    let totalPrice = parseInt(memoryCostText.innerText) + parseInt(storageCostText.innerText) +
+    parseInt(deliveryPriceText.innerText) + bestPrice;
 
     totalPriceText.innerText = totalPrice;
 
+    // Promo code calc
+    const promoInputText = document.getElementById('promo-input'); 
+    document.getElementById('apply-promo').addEventListener('click', function(){
+        if(promoInputText.value == 'stevekaku') {
+            let promoAmount = totalPrice * 0.2;
+            let price = totalPrice - promoAmount;
+            totalAmount.innerText = price.toFixed(2);
+            promoInputText.value = '';
+        }
+    })
+    totalAmount.innerText = totalPrice;
+
 }
+
+
 
 
 // Event Listener for 8GB Memory 
