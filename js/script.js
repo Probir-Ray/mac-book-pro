@@ -22,21 +22,23 @@ function totalPriceCalc() {
 
     // Sum of all cost
     let totalPrice = parseInt(memoryCostText.innerText) + parseInt(storageCostText.innerText) +
-    parseInt(deliveryPriceText.innerText) + bestPrice;
+    parseInt(deliveryPriceText.innerText) + parseInt(bestPrice);
 
     totalPriceText.innerText = totalPrice;
-
-    // Promo code calc
-    const promoInputText = document.getElementById('promo-input'); 
+    totalAmount.innerText = totalPrice;
+    
+    // Promo code calculation
     document.getElementById('apply-promo').addEventListener('click', function(){
+        const promoInputText = document.getElementById('promo-input'); 
+        totalPrice = totalAmount.innerText;
         if(promoInputText.value == 'stevekaku') {
             let promoAmount = totalPrice * 0.2;
             let price = totalPrice - promoAmount;
+            console.log(promoAmount, totalPrice, price);
             totalAmount.innerText = price.toFixed(2);
             promoInputText.value = '';
         }
     })
-    totalAmount.innerText = totalPrice;
 
 }
 
