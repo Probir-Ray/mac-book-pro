@@ -13,6 +13,7 @@
 <body>
     
     <main class="flex w-11/12 mx-auto mt-20">
+
         <section class="mac-pic w-1/2">
             <!-- iMAC Thumbnail Picture -->
             <img class="w-5/6 mx-auto" src="img/mac.png" alt="MAC Picture">
@@ -63,8 +64,49 @@
                 </button>
             </article>
 
+
+            <!-- Price area -->
+            <article class="price-area text-xl font-semibold mb-12">
+                <table class="table-auto" cellspacing = '12' cellpadding='16'>
+                    <tbody>
+                        <tr class="border-b-2">
+                            <td>Best Price</td>
+                            <td>$<span id="best-price">1299</span></td>
+                        </tr>
+                        <tr class="border-b-2">
+                            <td>Extra Memory Cost</td>
+                            <td>$<span id="memory-price">0</span></td>
+                        </tr>
+                        <tr class="border-b-2">
+                            <td>Extra Storage Cost</td>
+                            <td>$<span id="storage-price">0</span></td>
+                        </tr>
+                        <tr class="border-b-2 border-black">
+                            <td>Delivery Charge</td>
+                            <td>$<span id="delivery-price">0</span></td>
+                        </tr>
+                        <tr class="border-b-2">
+                            <td>Total Price</td>
+                            <td>$<span id="total-price">1299</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Promo -->
+                <div class="form mt-8 font-semibold">
+                    <h3 class="text-xl mb-2">Add Promo code</h3>
+                    <input type="text" id="promp-input" class="border-2 border-gray-300 rounded p-2">
+                    <button class="bg-red-500 text-white rounded p-2 border-2 border-red-500 -m-2" id="apply-promo" type="button">Apply</button>
+                </div>
+            </article>
+
         </section>
+
     </main>
+
+    <footer class="w-11/12 mx-auto my-15">
+        <h3 class="text-5xl font-bold border-t-2 text-center py-4">Total: $<span class="total">1299</span></h3>
+    </footer>
 
 
 
