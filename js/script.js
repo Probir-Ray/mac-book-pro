@@ -1,4 +1,4 @@
-// Javascript started here.
+// Javascript start here.
 
 // Get Cost function
 function getCost(item, price) {
@@ -43,7 +43,6 @@ function totalPriceCalc() {
             let price = totalPrice - promoAmount;
             console.log(promoAmount, totalPrice, price);
             totalAmount.innerText = price.toFixed(2);
-            // promoInputText.value = '';
         }
     })
 
