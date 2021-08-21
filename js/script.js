@@ -32,7 +32,9 @@ function totalPriceCalc() {
 
     // Promo code calculation
     document.getElementById('apply-promo').addEventListener('click', function(){
+        // Received total price totalPriceCalc function
         const totalPrice = totalPriceCalc();
+
         const totalAmount = document.getElementById('total');
         const promoInputText = document.getElementById('promo-input'); 
 
@@ -41,9 +43,7 @@ function totalPriceCalc() {
             let price = totalPrice - promoAmount;
             console.log(promoAmount, totalPrice, price);
             totalAmount.innerText = price.toFixed(2);
-            promoInputText.value = '';
-        } else {
-            
+            // promoInputText.value = '';
         }
     })
 
