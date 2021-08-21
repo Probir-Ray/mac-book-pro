@@ -26,21 +26,26 @@ function totalPriceCalc() {
 
     totalPriceText.innerText = totalPrice;
     totalAmount.innerText = totalPrice;
-    
+    return totalPrice;
+
+}
+
     // Promo code calculation
     document.getElementById('apply-promo').addEventListener('click', function(){
+        const totalPrice = totalPriceCalc();
+        const totalAmount = document.getElementById('total');
         const promoInputText = document.getElementById('promo-input'); 
-        totalPrice = totalAmount.innerText;
+
         if(promoInputText.value == 'stevekaku') {
             let promoAmount = totalPrice * 0.2;
             let price = totalPrice - promoAmount;
             console.log(promoAmount, totalPrice, price);
             totalAmount.innerText = price.toFixed(2);
             promoInputText.value = '';
+        } else {
+            
         }
     })
-
-}
 
 
 
